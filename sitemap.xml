@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.toranastudio.com/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.toranastudio.com/assets/img/5-lg.webp</image:loc>
+      <image:title>Kalyanam Grand Arch wedding backdrop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.toranastudio.com/assets/img/13-lg.webp</image:loc>
+      <image:title>Marigold Courtyard mehendi and haldi backdrop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.toranastudio.com/assets/img/17-lg.webp</image:loc>
+      <image:title>Temple Threshold pooja and festival backdrop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.toranastudio.com/assets/img/20-lg.webp</image:loc>
+      <image:title>Seemantham Soft Bloom baby shower backdrop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.toranastudio.com/assets/img/18-lg.webp</image:loc>
+      <image:title>First Year Festoon birthday backdrop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.toranastudio.com/assets/img/15-lg.webp</image:loc>
+      <image:title>New Home Toran griha pravesh decor set</image:title>
+    </image:image>
+  </url>
+</urlset>

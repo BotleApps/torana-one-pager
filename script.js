@@ -6,6 +6,11 @@
 /* Launch date used by the countdown. Change this to your real date. */
 const LAUNCH_DATE = new Date('2026-11-08T09:00:00-08:00'); // Diwali 2026
 
+/* Paste a Formspree (or similar) endpoint to collect signups.
+   While this is empty the form falls back to a pre-filled email. */
+const FORM_ENDPOINT = '';
+const STUDIO_EMAIL = 'hello@toranastudio.com';
+
 const IMG = 'assets/img/';
 const sm = n => `${IMG}${n}-sm.webp`;
 const lg = n => `${IMG}${n}-lg.webp`;
@@ -351,44 +356,74 @@ tick();
 setInterval(tick, 1000);
 
 /* ───────────────── waitlist form ───────────────── */
-/* No backend yet: validates, then opens a pre-filled email to the studio.
-   Swap the handler for a Formspree / Mailchimp endpoint at launch.        */
 
 const form = document.getElementById('waitlistForm');
 const formNote = document.getElementById('formNote');
-const STUDIO_EMAIL = 'hello@toranastudio.com';
+const submitBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', e => {
+function setNote(text, state) {
+  formNote.textContent = text;
+  formNote.className = state ? `formnote is-${state}` : 'formnote';
+}
+
+async function postSignup(payload) {
+  const res = await fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(`Signup failed with status ${res.status}`);
+}
+
+function mailtoFallback(payload) {
+  const body = Object.entries(payload)
+    .map(([k, v]) => `${k[0].toUpperCase() + k.slice(1)}: ${v || '—'}`)
+    .join('\n');
+  window.location.href =
+    `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent('Founding list — ' + payload.name)}` +
+    `&body=${encodeURIComponent(body)}`;
+}
+
+form.addEventListener('submit', async e => {
   e.preventDefault();
 
   const fields = form.elements;
-  const name = fields.name.value.trim();
-  const email = fields.email.value.trim();
-  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  const payload = {
+    name: fields.name.value.trim(),
+    email: fields.email.value.trim(),
+    region: fields.region.value,
+    occasion: fields.occasion.value.trim(),
+  };
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email);
 
-  form.querySelector('#wlName').classList.toggle('is-error', !name);
-  form.querySelector('#wlEmail').classList.toggle('is-error', !valid);
+  document.getElementById('wlName').classList.toggle('is-error', !payload.name);
+  document.getElementById('wlEmail').classList.toggle('is-error', !validEmail);
 
-  if (!name || !valid) {
-    formNote.textContent = 'Please add your name and a valid email address.';
-    formNote.className = 'formnote is-err';
+  if (!payload.name || !validEmail) {
+    setNote('Please add your name and a valid email address.', 'err');
     return;
   }
 
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Region: ${fields.region.value || '—'}`,
-    `Occasion: ${fields.occasion.value.trim() || '—'}`,
-  ].join('\n');
+  const firstName = payload.name.split(' ')[0];
 
-  window.location.href =
-    `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent('Founding list — ' + name)}` +
-    `&body=${encodeURIComponent(body)}`;
+  if (!FORM_ENDPOINT) {
+    mailtoFallback(payload);
+    setNote(`Thank you, ${firstName}. Send the email that just opened and you are on the list.`, 'ok');
+    return;
+  }
 
-  formNote.textContent = `Thank you, ${name.split(' ')[0]}. You are on the founding list — watch your inbox.`;
-  formNote.className = 'formnote is-ok';
-  form.reset();
+  submitBtn.disabled = true;
+  setNote('Tying your name to the garland…');
+
+  try {
+    await postSignup(payload);
+    setNote(`Thank you, ${firstName}. You are on the founding list — watch your inbox.`, 'ok');
+    form.reset();
+  } catch {
+    setNote(`Something went wrong on our side. Email us at ${STUDIO_EMAIL} and we will add you by hand.`, 'err');
+  } finally {
+    submitBtn.disabled = false;
+  }
 });
 
 /* ───────────────── misc ───────────────── */

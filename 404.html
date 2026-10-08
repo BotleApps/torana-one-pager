@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found | Torana Studio</title>
+<meta name="robots" content="noindex, follow" />
+<meta name="theme-color" content="#8B1E23" />
+<link rel="icon" type="image/png" href="/assets/logo/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .lost {
+    min-height: 100dvh;
+    display: grid; place-content: center; text-align: center;
+    padding: 3rem 1.5rem; position: relative; overflow: hidden;
+  }
+  .lost__logo { width: min(340px, 72vw); height: auto; margin: 0 auto 2.2rem; }
+  .lost h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: 0.6rem; }
+  .lost p { color: var(--ink-soft); max-width: 46ch; margin-inline: auto; }
+  .lost__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 2rem; }
+</style>
+</head>
+<body>
+
+<main class="lost">
+  <div class="hero__wash" aria-hidden="true"></div>
+
+  <img class="lost__logo" src="/assets/logo/torana-lockup.webp" width="900" height="482"
+       alt="Torana Studio — where every celebration begins" />
+
+  <p class="eyebrow" style="justify-content:center"><span class="eyebrow__dot"></span> 404</p>
+  <h1>This threshold is empty</h1>
+  <p>
+    The page you were looking for has moved or never existed. The garland, happily, is
+    still hanging at the front door.
+  </p>
+
+  <div class="lost__actions">
+    <a class="btn btn--primary" href="/">Back to the studio</a>
+    <a class="btn btn--ghost" href="/#waitlist">Join the founding list</a>
+  </div>
+</main>
+
+</body>
+</html>
