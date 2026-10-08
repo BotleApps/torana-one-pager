@@ -6,16 +6,21 @@
 <title>Torana Studio — Where Every Celebration Begins</title>
 <meta name="description" content="Authentic, eco-conscious Indian backdrop &amp; decor kits — to buy or to rent. Simple DIY assembly for weddings, mehendi, poojas, baby showers and birthdays. Launching soon across the US &amp; India." />
 <meta name="theme-color" content="#8B1E23" />
+<link rel="canonical" href="https://www.toranastudio.com/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.toranastudio.com/" />
 <meta property="og:title" content="Torana Studio — Where Every Celebration Begins" />
 <meta property="og:description" content="Heritage-crafted DIY backdrop &amp; decor kits for Indian celebrations. Buy or rent. Launching soon." />
-<meta property="og:image" content="assets/backdrops/IMG_0D1C675FEC95-5.jpeg" />
+<meta property="og:image" content="https://www.toranastudio.com/assets/img/5-lg.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="icon" href="assets/logo/IMG_2145.PNG" />
+<link rel="icon" type="image/png" href="assets/logo/favicon.png" />
+<link rel="apple-touch-icon" href="assets/logo/favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="assets/logo/torana-lockup.webp" />
+<link rel="preload" as="image" href="assets/img/9-lg.webp" />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -43,11 +48,8 @@
 <header class="nav" id="nav">
   <div class="shell nav__inner">
     <a class="brand" href="#top" aria-label="Torana Studio home">
-      <img src="assets/logo/IMG_2145.PNG" alt="" class="brand__mark" />
-      <span class="brand__text">
-        <span class="brand__name">Torana Studio</span>
-        <span class="brand__tag">where every celebration begins</span>
-      </span>
+      <img src="assets/logo/torana-nav.webp" width="420" height="197"
+           alt="Torana Studio" class="brand__lockup" />
     </a>
 
     <nav class="nav__links" id="navLinks" aria-label="Primary">
@@ -63,6 +65,7 @@
       <span></span><span></span><span></span>
     </button>
   </div>
+  <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
 </header>
 
 <main id="main">
@@ -70,6 +73,19 @@
   <!-- ───────────────────────── HERO ───────────────────────── -->
   <section class="hero" id="top">
     <div class="hero__wash" aria-hidden="true"></div>
+    <div class="hero__kolam" aria-hidden="true">
+      <svg viewBox="0 0 600 600" fill="none" stroke="currentColor" stroke-width="1.1">
+        <circle class="draw" cx="300" cy="300" r="286" />
+        <circle class="draw" cx="300" cy="300" r="214" stroke-dasharray="3 9" />
+        <g class="kolam-spin">
+          <path class="draw" d="M300 60c66 60 66 180 0 240-66-60-66-180 0-240Z" />
+          <path class="draw" d="M300 540c66-60 66-180 0-240-66 60-66 180 0 240Z" />
+          <path class="draw" d="M60 300c60-66 180-66 240 0-60 66-180 66-240 0Z" />
+          <path class="draw" d="M540 300c-60-66-180-66-240 0 60 66 180 66 240 0Z" />
+        </g>
+      </svg>
+    </div>
+
     <div class="shell hero__inner">
 
       <div class="hero__copy">
@@ -77,44 +93,48 @@
           <span class="eyebrow__dot"></span> Pre-launch · Founding collection
         </p>
 
-        <h1 class="hero__title reveal" data-delay="1">
-          Where Every<br />
-          <em>Celebration</em><br />
-          Begins
+        <h1 class="hero__logo reveal" data-delay="1">
+          <img src="assets/logo/torana-lockup.webp" width="900" height="482"
+               alt="Torana Studio — where every celebration begins" fetchpriority="high" />
         </h1>
 
-        <p class="hero__lede reveal" data-delay="2">
+        <p class="hero__kicker reveal" data-delay="2">Traditional soul. Modern ease.</p>
+
+        <p class="hero__lede reveal" data-delay="3">
           Authentic, eco-conscious Indian backdrop &amp; decor kits — crafted on premium
           reusable cloth, flat-packed, and shipped to your door. Buy them, or rent them
           for the day. Assembled by you, in under fifteen minutes.
         </p>
 
-        <div class="hero__actions reveal" data-delay="3">
+        <div class="hero__actions reveal" data-delay="4">
           <a class="btn btn--primary" href="#waitlist">Join the Founding List</a>
           <a class="btn btn--ghost" href="#lookbook">View the Lookbook</a>
         </div>
 
         <ul class="hero__proof reveal" data-delay="4">
-          <li><strong>100%</strong><span>Cloth, never vinyl</span></li>
-          <li><strong>15 min</strong><span>Tool-free assembly</span></li>
+          <li><strong data-count="100" data-suffix="%">0%</strong><span>Cloth, never vinyl</span></li>
+          <li><strong data-count="15" data-suffix=" min">0 min</strong><span>Tool-free assembly</span></li>
           <li><strong>US + IN</strong><span>Doorstep delivery</span></li>
         </ul>
       </div>
 
       <div class="hero__art reveal" data-delay="2">
         <div class="arch">
-          <div class="arch__frame">
-            <img src="assets/backdrops/IMG_0D1C675FEC95-9.jpeg" alt="A traditional Indian cloth backdrop styled for a home celebration" />
+          <div class="arch__frame" id="archFrame">
+            <img class="arch__slide is-on" src="assets/img/9-lg.webp" alt="A traditional Indian cloth backdrop styled for a home celebration" />
           </div>
           <span class="arch__finial" aria-hidden="true"></span>
+          <p class="arch__caption" id="archCaption" aria-live="off">Mehendi &amp; Haldi</p>
         </div>
 
         <figure class="hero__chip hero__chip--a">
-          <img src="assets/backdrops/IMG_0D1C675FEC95-1.jpeg" alt="Close detail of a hand-illustrated backdrop print" />
+          <img src="assets/img/1-sm.webp" width="700" height="700" loading="eager"
+               alt="Close detail of a hand-illustrated backdrop print" />
         </figure>
 
         <figure class="hero__chip hero__chip--b">
-          <img src="assets/backdrops/IMG_0D1C675FEC95-7.jpeg" alt="A festive stage setup with floral garlands and brass lamps" />
+          <img src="assets/img/7-sm.webp" width="700" height="467" loading="eager"
+               alt="A festive stage setup with floral garlands and brass lamps" />
           <figcaption>Styled at home</figcaption>
         </figure>
 
@@ -147,7 +167,11 @@
   <section class="story section" id="story">
     <div class="shell story__grid">
       <div class="story__media reveal">
-        <img src="assets/backdrops/IMG_0D1C675FEC95-12.jpeg" alt="A richly illustrated traditional backdrop print on cloth" />
+        <div class="story__frame">
+          <img src="assets/img/12-lg.webp" width="1254" height="1254" loading="lazy"
+               data-parallax="0.08"
+               alt="A richly illustrated traditional backdrop print on cloth" />
+        </div>
         <div class="story__badge">
           <span>Est.</span>
           <strong>2026</strong>
@@ -196,7 +220,6 @@
           Four promises we design every single kit against.
         </p>
       </header>
-
       <div class="cards">
         <article class="card reveal">
           <span class="card__num">01</span>
@@ -266,6 +289,12 @@
       <header class="section__head section__head--center">
         <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__dot"></span> Two ways to celebrate</p>
         <h2 class="reveal" data-delay="1">Make it yours, or borrow it for the day</h2>
+        <svg class="divider divider--light reveal" data-delay="2" viewBox="0 0 240 40" aria-hidden="true">
+          <path class="draw" d="M8 20h74" /><path class="draw" d="M158 20h74" />
+          <path class="draw" d="M120 6c13 8 13 20 0 28-13-8-13-20 0-28Z" />
+          <path class="draw" d="M120 10c-9 6-14 10-18 10 4 0 9 4 18 10" />
+          <path class="draw" d="M120 10c9 6 14 10 18 10-4 0-9 4-18 10" />
+        </svg>
       </header>
 
       <div class="models__grid">
@@ -325,6 +354,12 @@
       <header class="section__head section__head--center">
         <p class="eyebrow reveal"><span class="eyebrow__dot"></span> How it works</p>
         <h2 class="reveal" data-delay="1">Four calm steps, start to finish</h2>
+        <svg class="divider reveal" data-delay="2" viewBox="0 0 240 40" aria-hidden="true">
+          <path class="draw" d="M8 20h74" /><path class="draw" d="M158 20h74" />
+          <path class="draw" d="M120 6c13 8 13 20 0 28-13-8-13-20 0-28Z" />
+          <path class="draw" d="M120 10c-9 6-14 10-18 10 4 0 9 4 18 10" />
+          <path class="draw" d="M120 10c9 6 14 10 18 10-4 0-9 4-18 10" />
+        </svg>
       </header>
 
       <ol class="steps">
@@ -414,7 +449,8 @@
     <div class="shell faq__grid">
 
       <aside class="note reveal">
-        <p class="note__brand">T O R A N A &nbsp; S T U D I O</p>
+        <img class="note__logo" src="assets/logo/torana-nav.webp" width="420" height="197"
+             loading="lazy" alt="Torana Studio" />
         <p class="note__tag">where every celebration begins</p>
         <hr />
         <p>Dear Friend,</p>
@@ -506,9 +542,9 @@
 <footer class="footer">
   <div class="shell footer__inner">
     <div class="footer__brand">
-      <img src="assets/logo/IMG_2145.PNG" alt="" class="brand__mark" />
-      <p class="footer__name">Torana Studio</p>
-      <p class="footer__tag">Where every celebration begins.</p>
+      <img src="assets/logo/torana-lockup.webp" width="900" height="482" loading="lazy"
+           alt="Torana Studio" class="footer__lockup" />
+      <p class="footer__tag">Crafted by heritage. Assembled by you.</p>
     </div>
 
     <nav class="footer__col" aria-label="Explore">
@@ -538,7 +574,7 @@
 
   <div class="shell footer__base">
     <p>© <span id="year">2026</span> Torana Studio. All rights reserved.</p>
-    <p>Crafted by heritage. Assembled by you.</p>
+    <p>Where every celebration begins.</p>
   </div>
 </footer>
 
@@ -547,7 +583,7 @@
   <button class="lightbox__close" id="lbClose" aria-label="Close viewer">&times;</button>
   <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
   <figure class="lightbox__stage">
-    <img id="lbImage" src="" alt="" />
+    <img id="lbImage" alt="" />
     <figcaption id="lbCaption"></figcaption>
   </figure>
   <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">&#8250;</button>
