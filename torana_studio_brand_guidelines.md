@@ -5,7 +5,7 @@
 ## 1. Brand Soul & Essence
 
 ### 1.1 Brand Story & Name Etymology
-In Indian heritage, the *Toran* (or *Torana*) is the sacred garland tied at the entrance of a threshold—the very first decorative element that signals the arrival of auspiciousness, joy, and celebration. It marks the precise boundary where an ordinary space becomes a sanctuary of festivities. 
+In Indian heritage, the *Toran* (or *Torana*) is the mango-leaf garland tied at the entrance of a threshold—the very first decorative element that signals the arrival of auspiciousness, joy, and celebration. It marks the precise boundary where an ordinary space becomes a sanctuary of festivities. 
 
 **Torana Studio** was born from this exact emotion. Founded by two lifelong friends—one based in India and the other in the United States—Torana Studio bridges geographical boundaries through a single shared thread: a deep passion for traditional Indian decor art. We craft and curate lightweight, eco-conscious, DIY traditional backdrops and decor properties that families across the globe can easily assemble to celebrate life’s cherished milestones—from weddings and Mehendi ceremonies to baby showers, birthdays, and grand festivals.
 
@@ -66,7 +66,7 @@ In Indian heritage, the *Toran* (or *Torana*) is the sacred garland tied at the 
 | :--- | :--- |
 | "Transform your threshold into a festive sanctuary." | "Buy cheap party backdrop supplies online." |
 | "Crafted on premium reusable cloth textiles." | "Cheap synthetic photo backdrop banner." |
-| "Easy, tool-free DIY assembly in under 15 minutes." | "Complicated setup requiring manual labor." |
+| "Easy, tool-free DIY assembly in a few minutes." | "Complicated setup requiring manual labor." |
 | "Sustainable alternatives honoring nature." | "Disposable plastic party props." |
 | "Where every celebration begins." | "One-stop shop for event rentals." |
 
@@ -190,7 +190,7 @@ The typography pairs classic editorial luxury with clean modern legibility, echo
 > **Headline:** *Heritage Crafted for Home Celebrations*  
 > * **Authentic Artistry:** Designed with traditional Indian motifs, lotus arches, and temple artwork.
 > **Eco-Conscious Textiles:** Premium cloth backdrops and sustainable props replacing single-use plastics.
-> **Effortless Setup:** Lightweight, compact kits designed for smooth 15-minute assembly and return.
+> **Effortless Setup:** Lightweight, compact kits designed for smooth assembly in a few minutes and easy returns.
 
 ---
 
