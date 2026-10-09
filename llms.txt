@@ -35,7 +35,7 @@ Two models are offered:
 
 ## Collection series
 
-The homepage presents seven collection series. Open a series to read its short and full
+The homepage presents Unique collection series. Open a series to read its short and full
 description. Each series page uses artwork from its matching folder under
 `assets/collections/`; optimized WebP files are served from `assets/collections-webp/`.
 Individual product designs and listings are still being prepared.
@@ -110,15 +110,15 @@ Individual product designs and listings are still being prepared.
   designs are framed by carved temple pillars and marigold garlands to set a tranquil,
   blessed atmosphere for any ceremony.
 
-### Rajasthani Series
+### Hindhusthani Series
 
-- Page: https://www.toranastudio.com/collection.html?series=rajasthani
+- Page: https://www.toranastudio.com/collection.html?series=hindhusthani
 - Tagline: Regal Splendor, Vibrant Heritage.
 - One-liner: Regal jharokhas, royal block-print trees, mehndi artwork, and majestic
   desert motifs.
-- Short description: Inspired by palace architecture and folk craft, the Rajasthani
+- Short description: Inspired by palace architecture and folk craft, the Hindhusthani
   Series brings royal archways, painted horses, and block-printed trees to life.
-- Full description: Step into royal courtyards with the Rajasthani Series. Featuring
+- Full description: Step into royal courtyards with the Hindhusthani Series. Featuring
   elegant jharokha archways, royal Kalpavriksha tree-of-life wall murals, folk-painted
   horses, and traditional Mehndi ceremony illustrations, this collection radiates the
   celebratory spirit and opulent charm of Rajasthan's heritage in shades of mint, rose,

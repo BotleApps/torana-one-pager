@@ -37,9 +37,14 @@ function renderSeriesCards() {
                alt="${series.images[0].alt}" loading="lazy" decoding="async" />
         </a>
         ${series.images.length > 1 ? `
-          <button class="series-card__arrow series-card__arrow--prev" type="button" aria-label="Previous ${series.name} image">‹</button>
-          <button class="series-card__arrow series-card__arrow--next" type="button" aria-label="Next ${series.name} image">›</button>
-          <span class="series-card__counter" aria-live="polite">1 / ${series.images.length}</span>
+          <div class="series-card__pages" role="group" aria-label="${series.name} photos">
+            ${series.images.map((image, index) => `
+              <button class="series-card__page" type="button" data-image-index="${index}"
+                      aria-label="Show ${series.name} photo ${index + 1} of ${series.images.length}"
+                      aria-current="${index === 0 ? 'true' : 'false'}">
+                <span class="sr-only">Photo ${index + 1}</span>
+              </button>`).join('')}
+          </div>
         ` : ''}
       </div>
       <a class="series-card__body" href="collection.html?series=${series.slug}">
@@ -56,20 +61,19 @@ renderSeriesCards();
 
 if (seriesGrid) {
   seriesGrid.addEventListener('click', event => {
-    const button = event.target.closest('.series-card__arrow');
+    const button = event.target.closest('.series-card__page');
     if (!button) return;
 
     const card = button.closest('.series-card');
     const collection = window.TORANA_COLLECTIONS.find(item => item.slug === card.dataset.series);
     const image = card.querySelector('.series-card__photo');
-    const counter = card.querySelector('.series-card__counter');
-    let index = Number(card.dataset.imageIndex || 0);
-    index = (index + (button.classList.contains('series-card__arrow--next') ? 1 : -1)
-      + collection.images.length) % collection.images.length;
+    const index = Number(button.dataset.imageIndex);
     card.dataset.imageIndex = index;
     image.src = collection.images[index].sm;
     image.alt = collection.images[index].alt || collection.name;
-    counter.textContent = `${index + 1} / ${collection.images.length}`;
+    card.querySelectorAll('.series-card__page').forEach((page, pageIndex) => {
+      page.setAttribute('aria-current', String(pageIndex === index));
+    });
   });
 }
 

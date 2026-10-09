@@ -29,22 +29,11 @@ if (!series) {
   document.getElementById('twitterImage').content = socialImage;
 
   document.getElementById('breadcrumbName').textContent = series.name;
-  document.getElementById('seriesOneLiner').textContent = series.oneLiner;
   document.getElementById('seriesName').textContent = series.name;
   document.getElementById('seriesTagline').textContent = series.tagline;
   document.getElementById('seriesShort').textContent = series.shortDescription;
-  document.getElementById('seriesLong').textContent = series.longDescription;
   document.getElementById('seriesTags').innerHTML = series.tags
     .map(tag => `<li>#${tag}</li>`).join('');
-  document.getElementById('productsIntro').textContent =
-    `A closer look at the individual designs in the ${series.name}.`;
-  document.getElementById('productList').innerHTML = series.products.length
-    ? series.products.map(product => `
-      <article class="series-product">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-      </article>`).join('')
-    : `<p>Individual product listings are being prepared for this series. Join the founding list to be among the first to see them.</p>`;
 
   renderGallery(series);
   addCollectionSchema(series, canonical, description);

@@ -194,7 +194,7 @@ The typography pairs classic editorial luxury with clean modern legibility, echo
 
 #### Collection Series
 
-The website introduces seven named decor series. Each series tile presents its name,
+The website introduces Unique named decor series. Each series tile presents its name,
 tagline, and one-line introduction. The short description appears on the series page;
 the long description is available there as an expanded story.
 Series photography is assigned from the matching named folders under `assets/collections/`.
@@ -207,7 +207,7 @@ Individual product listings are added after product names and details are confir
 | **Kalamkari Series** | Hand-Painted Splendor, Expressed in Detail. | Artistic pen-style illustration with sacred shlokas, lotus borders, and fluid floral motifs. |
 | **Kalpana Series** | Where Tradition Meets Creative Imagination. | Artistic reinterpretations of classic motifs through bold lotus art, swirling paisleys, and soft pastel palettes. |
 | **Kolam Series** | The Sacred Rhythm of Lines and Symmetry. | Sacred geometric line art and doorstep symmetry rendered in pristine floor and wall motifs. |
-| **Rajasthani Series** | Regal Splendor, Vibrant Heritage. | Regal jharokhas, royal block-print trees, mehndi artwork, and majestic desert motifs. |
+| **Hindhusthani Series** | Regal Splendor, Vibrant Heritage. | Regal jharokhas, royal block-print trees, mehndi artwork, and majestic desert motifs. |
 | **Sampradaya Series** | The Essence of Eternal Customs. | Pure customary motifs, temple archways, auspicious symbols, and classic festive layouts. |
 
 Full collection descriptions, short descriptions, tags, and page data are maintained in
