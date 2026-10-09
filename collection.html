@@ -14,7 +14,11 @@
 <meta property="og:title" content="Collection | Torana Studio" id="ogTitle" />
 <meta property="og:description" content="Discover the stories and artistry behind Torana Studio's Indian celebration decor collections." id="ogDescription" />
 <meta property="og:url" content="https://www.toranastudio.com/collection.html" id="ogUrl" />
-<meta property="og:image" content="https://www.toranastudio.com/assets/logo/torana-lockup.png" />
+<meta property="og:image" content="https://www.toranastudio.com/assets/logo/torana-lockup.png" id="ogImage" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Collection | Torana Studio" id="twitterTitle" />
+<meta name="twitter:description" content="Discover the stories and artistry behind Torana Studio's Indian celebration decor collections." id="twitterDescription" />
+<meta name="twitter:image" content="https://www.toranastudio.com/assets/logo/torana-lockup.png" id="twitterImage" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet" />
@@ -50,21 +54,23 @@
       <span id="breadcrumbName" aria-current="page"></span>
     </nav>
 
-    <section class="series-detail__intro">
-      <div class="series-detail__copy">
+    <section class="series-detail__heading">
+      <div class="series-detail__title">
         <p class="eyebrow"><span class="eyebrow__dot"></span><span id="seriesOneLiner"></span></p>
         <h1 id="seriesName"></h1>
         <p class="series-detail__tagline" id="seriesTagline"></p>
+      </div>
+      <div class="series-detail__summary">
         <p class="series-detail__short" id="seriesShort"></p>
         <details class="series-story">
           <summary>Read the full story</summary>
           <p id="seriesLong"></p>
         </details>
-        <ul class="series-tags" id="seriesTags" aria-label="Collection themes"></ul>
       </div>
-
-      <div class="series-gallery" id="seriesGallery" aria-label="Collection photographs"></div>
     </section>
+
+    <section class="series-gallery" id="seriesGallery" aria-label="Collection photographs"></section>
+    <ul class="series-tags" id="seriesTags" aria-label="Collection themes"></ul>
 
     <section class="series-products" aria-labelledby="productsTitle">
       <header class="section__head section__head--split">
@@ -79,6 +85,11 @@
     </section>
   </div>
 </main>
+
+<dialog class="series-image-dialog" id="seriesImageDialog" aria-label="Collection image viewer">
+  <form method="dialog"><button class="series-image-dialog__close" aria-label="Close image">&times;</button></form>
+  <img id="seriesImageDialogPhoto" alt="" />
+</dialog>
 
 <main class="series-not-found" id="seriesNotFound" hidden>
   <div class="shell">

@@ -1,14 +1,16 @@
-"""One-off asset pipeline: strips the logo background and builds web-sized WebP
-images into assets/img/. Run with: /tmp/imgenv/bin/python tools/build_assets.py"""
+"""Build optimized WebP variants for backdrops and named collection sets."""
 
 import os
 from PIL import Image
+from PIL import ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'assets', 'backdrops')
 OUT = os.path.join(ROOT, 'assets', 'img')
 LOGO_SRC = os.path.join(ROOT, 'assets', 'logo', 'IMG_2145.PNG')
 LOGO_OUT = os.path.join(ROOT, 'assets', 'logo')
+COLLECTIONS_SRC = os.path.join(ROOT, 'assets', 'collections')
+COLLECTIONS_OUT = os.path.join(ROOT, 'assets', 'collections-webp')
 
 os.makedirs(OUT, exist_ok=True)
 
@@ -30,6 +32,31 @@ def backdrops():
             fit(im, box).save(dst, 'WEBP', quality=q, method=6)
             total_out += os.path.getsize(dst)
     print(f'backdrops: {total_in/1e6:.1f} MB -> {total_out/1e6:.1f} MB')
+
+
+def collections():
+    total_in = total_out = image_count = 0
+    for folder in sorted(os.scandir(COLLECTIONS_SRC), key=lambda item: item.name.casefold()):
+        if not folder.is_dir():
+            continue
+        slug = folder.name.removesuffix(' Series').casefold().replace(' ', '-')
+        output_dir = os.path.join(COLLECTIONS_OUT, slug)
+        os.makedirs(output_dir, exist_ok=True)
+        files = sorted(
+            (name for name in os.listdir(folder.path)
+             if os.path.isfile(os.path.join(folder.path, name))),
+            key=str.casefold,
+        )
+        for index, name in enumerate(files, 1):
+            src = os.path.join(folder.path, name)
+            total_in += os.path.getsize(src)
+            image = ImageOps.exif_transpose(Image.open(src)).convert('RGB')
+            for suffix, edge, quality in (('lg', 1440, 76), ('sm', 800, 70)):
+                dst = os.path.join(output_dir, f'{index:02d}-{suffix}.webp')
+                fit(image, edge).save(dst, 'WEBP', quality=quality, method=6)
+                total_out += os.path.getsize(dst)
+            image_count += 1
+    print(f'collections: {image_count} images, {total_in/1e6:.1f} MB -> {total_out/1e6:.1f} MB')
 
 
 def logo():
@@ -108,4 +135,5 @@ def logo():
 
 if __name__ == '__main__':
     backdrops()
+    collections()
     logo()

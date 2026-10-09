@@ -7,11 +7,39 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=kattam</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=ithihasa</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=kalamkari</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=kalpana</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=kolam</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=rajasthani</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.toranastudio.com/collection.html?series=sampradaya</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=kattam</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/kattam/01-lg.webp</image:loc><image:title>Kattam Series traditional checks and structured grids</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=ithihasa</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/ithihasa/01-lg.webp</image:loc><image:title>Ithihasa Series sacred stories and temple art</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=kalamkari</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/kalamkari/01-lg.webp</image:loc><image:title>Kalamkari Series floral pen art and sacred shlokas</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=kalpana</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/kalpana/01-lg.webp</image:loc><image:title>Kalpana Series creative heritage art and paisley motifs</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=kolam</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/kolam/01-lg.webp</image:loc><image:title>Kolam Series sacred geometry and symmetry</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=rajasthani</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/rajasthani/01-lg.webp</image:loc><image:title>Rajasthani Series royal floral ceremony backdrop</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.toranastudio.com/collection.html?series=sampradaya</loc>
+    <lastmod>2026-10-09</lastmod><priority>0.8</priority>
+    <image:image><image:loc>https://www.toranastudio.com/assets/collections-webp/sampradaya/01-lg.webp</image:loc><image:title>Sampradaya Series customary motifs and temple archways</image:title></image:image>
+  </url>
 </urlset>

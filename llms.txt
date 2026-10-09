@@ -36,8 +36,9 @@ Two models are offered:
 ## Collection series
 
 The homepage presents seven collection series. Open a series to read its short and full
-description. Individual product designs and collection photographs are being prepared;
-do not assign the currently available preview photos to a series.
+description. Each series page uses artwork from its matching folder under
+`assets/collections/`; optimized WebP files are served from `assets/collections-webp/`.
+Individual product designs and listings are still being prepared.
 
 ### Kattam Series
 

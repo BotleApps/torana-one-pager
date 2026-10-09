@@ -1,3 +1,12 @@
+const collectionImages = (slug, count, series) => Array.from({ length: count }, (_, index) => {
+  const number = String(index + 1).padStart(2, '0');
+  return {
+    sm: `assets/collections-webp/${slug}/${number}-sm.webp`,
+    lg: `assets/collections-webp/${slug}/${number}-lg.webp`,
+    alt: `${series} backdrop design ${index + 1}`,
+  };
+});
+
 window.TORANA_COLLECTIONS = [
   {
     slug: 'kattam',
@@ -7,7 +16,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'KattamSeries', 'TraditionalChecks', 'HeritageWeaves', 'GeometricArt', 'SouthIndianHeritage'],
     shortDescription: 'Celebrating the classic grid of traditional South Indian textiles, the Kattam Series brings structured elegance, sacred borders, and rhythmic charm to festive event backdrops.',
     longDescription: 'Inspired by the iconic check patterns (Kattam) of South Indian weaves, this collection brings grid-based simplicity and cultural authenticity to event backdrops. Highlighted by traditional border motifs, yali artwork, and rich color blocks—from pastel checks to rich olive and turmeric tones—the Kattam Series creates a structured yet warm setting for ceremonial stages and intimate celebrations.',
-    images: [],
+    images: collectionImages('kattam', 3, 'Kattam Series'),
     products: [],
   },
   {
@@ -18,7 +27,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'IthihasaSeries', 'EpicTales', 'DivineArt', 'CulturalNarratives', 'IndianHeritage'],
     shortDescription: 'Inspired by sacred iconography, mythological scenes, and classical temple art, the Ithihasa Series translates epic narratives into grand backdrop compositions.',
     longDescription: 'Step into a world of timeless devotion with the Ithihasa Series. Featuring traditional portraits of deities, sacred lotus pediments, archways (prabhavali), and epic storytelling illustrations against rich crimson, ivory, and sage backdrops, this collection creates a regal ambiance. It brings the reverence, drama, and artistic legacy of ancient Indian temples directly to your grand celebrations.',
-    images: [],
+    images: collectionImages('ithihasa', 8, 'Ithihasa Series'),
     products: [],
   },
   {
@@ -29,7 +38,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'KalamkariSeries', 'PenArtistry', 'SacredShlokas', 'LotusMotifs', 'ArtisanalLuxe'],
     shortDescription: 'Highlighting classical pen art techniques, the Kalamkari Series features hand-painted floral panels, sacred Sanskrit chants, and rich botanical borders.',
     longDescription: 'Rooted in traditional textile art, the Kalamkari Series combines fluid linework with spiritual warmth. Featuring central panels adorned with Sanskrit shlokas like the Ganesha Stotram, framed by blooming lotus borders, peacocks, and intricate vine scrollwork, these backdrops blend artisanal detail with a deeply auspicious, elevated aesthetic.',
-    images: [],
+    images: collectionImages('kalamkari', 2, 'Kalamkari Series'),
     products: [],
   },
   {
@@ -40,7 +49,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'KalpanaSeries', 'CreativeHeritage', 'ModernTradition', 'ArtisticPatterns', 'DesignVision'],
     shortDescription: 'A creative exploration of traditional Indian motifs, the Kalpana Series bridges heritage art with sophisticated contemporary backdrops.',
     longDescription: 'Kalpana—meaning imagination—offers a fresh visual take on classical motifs. From oversized line-art lotus ponds and dramatic swirling paisley wall textures to subtle block-printed repeat patterns on blush and terracotta tones, this collection brings creative depth and artistic flair to wedding mandaps and reception stages.',
-    images: [],
+    images: collectionImages('kalpana', 3, 'Kalpana Series'),
     products: [],
   },
   {
@@ -51,7 +60,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'KolamSeries', 'SacredGeometry', 'TraditionalPatterns', 'AuspiciousDesign', 'SymmetricalArt'],
     shortDescription: 'Honoring the daily ritual of threshold art, the Kolam Series captures the serene beauty and mathematical symmetry of traditional South Indian line art.',
     longDescription: 'Inspired by dawn ritual drawings, the Kolam Series celebrates sacred symmetry and auspicious welcome. Featuring crisp white and ochre geometric line drawings centered against warm turmeric, terracotta, and deep maroon backdrops, these designs are framed by carved temple pillars and marigold garlands to set a tranquil, blessed atmosphere for any ceremony.',
-    images: [],
+    images: collectionImages('kolam', 3, 'Kolam Series'),
     products: [],
   },
   {
@@ -62,7 +71,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'RajasthaniSeries', 'RegalDesign', 'RoyalIndia', 'JharokhaArt', 'MehndiThemes', 'DesertHeritage'],
     shortDescription: 'Inspired by palace architecture and folk craft, the Rajasthani Series brings royal archways, painted horses, and block-printed trees to life.',
     longDescription: "Step into royal courtyards with the Rajasthani Series. Featuring elegant jharokha archways, royal Kalpavriksha tree-of-life wall murals, folk-painted horses, and traditional Mehndi ceremony illustrations, this collection radiates the celebratory spirit and opulent charm of Rajasthan's heritage in shades of mint, rose, and warm ochre.",
-    images: [],
+    images: collectionImages('rajasthani', 9, 'Rajasthani Series'),
     products: [],
   },
   {
@@ -73,7 +82,7 @@ window.TORANA_COLLECTIONS = [
     tags: ['ToranaStudio', 'SampradayaSeries', 'ClassicalDesign', 'HeritageLiving', 'FestiveAesthetics', 'AuthenticIndia'],
     shortDescription: 'Deeply rooted in ritual and tradition, the Sampradaya Series features iconic temple borders, auspicious symbols, and classic floral arrangements.',
     longDescription: 'Sampradaya embodies the unbroken continuity of Indian traditions and customs. Combining floor-to-ceiling white-ink arch motifs (rangoli archways), repeated elephant and peacock motifs, sacred Om symbols, and lush banana canopy frameworks, this versatile series delivers an authentic, quintessential backdrop for traditional ceremonies.',
-    images: [],
+    images: collectionImages('sampradaya', 9, 'Sampradaya Series'),
     products: [],
   },
 ];

@@ -195,10 +195,10 @@ The typography pairs classic editorial luxury with clean modern legibility, echo
 #### Collection Series
 
 The website introduces seven named decor series. Each series tile presents its name,
-tagline, and one-line introduction. Its short description appears on hover and on the
-series page; the long description is available on that page as an expanded story.
-Collection photography and individual product listings are added only after their
-series and product assignments are confirmed.
+tagline, and one-line introduction. The short description appears on the series page;
+the long description is available there as an expanded story.
+Series photography is assigned from the matching named folders under `assets/collections/`.
+Individual product listings are added after product names and details are confirmed.
 
 | Series | Tagline | One-Liner |
 | :--- | :--- | :--- |

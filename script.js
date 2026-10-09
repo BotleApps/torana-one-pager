@@ -33,14 +33,9 @@ function renderSeriesCards() {
       <div class="series-card__visual">
         <a class="series-card__image-link" href="collection.html?series=${series.slug}"
            aria-label="Explore ${series.name}">
-          ${series.images.length
-            ? `<img class="series-card__photo" src="${series.images[0].src}"
-                 alt="${series.images[0].alt || series.name}" loading="lazy" decoding="async" />`
-            : `<span class="series-card__monogram" aria-hidden="true">${series.name.charAt(0)}</span>`}
+          <img class="series-card__photo" src="${series.images[0].sm}"
+               alt="${series.images[0].alt}" loading="lazy" decoding="async" />
         </a>
-        <span class="series-card__index">Series ${String(i + 1).padStart(2, '0')}</span>
-        <span class="series-card__visual-caption" ${series.images.length ? 'hidden' : ''}>Collection artwork coming soon</span>
-        <span class="series-card__hover-copy">${series.shortDescription}</span>
         ${series.images.length > 1 ? `
           <button class="series-card__arrow series-card__arrow--prev" type="button" aria-label="Previous ${series.name} image">‹</button>
           <button class="series-card__arrow series-card__arrow--next" type="button" aria-label="Next ${series.name} image">›</button>
@@ -72,7 +67,7 @@ if (seriesGrid) {
     index = (index + (button.classList.contains('series-card__arrow--next') ? 1 : -1)
       + collection.images.length) % collection.images.length;
     card.dataset.imageIndex = index;
-    image.src = collection.images[index].src;
+    image.src = collection.images[index].sm;
     image.alt = collection.images[index].alt || collection.name;
     counter.textContent = `${index + 1} / ${collection.images.length}`;
   });

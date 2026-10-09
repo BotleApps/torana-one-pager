@@ -22,6 +22,11 @@ if (!series) {
   document.getElementById('ogTitle').content = `${series.name} | Torana Studio`;
   document.getElementById('ogDescription').content = description;
   document.getElementById('ogUrl').content = canonical;
+  const socialImage = new URL(series.images[0].lg, window.location.href).href;
+  document.getElementById('ogImage').content = socialImage;
+  document.getElementById('twitterTitle').content = `${series.name} | Torana Studio`;
+  document.getElementById('twitterDescription').content = description;
+  document.getElementById('twitterImage').content = socialImage;
 
   document.getElementById('breadcrumbName').textContent = series.name;
   document.getElementById('seriesOneLiner').textContent = series.oneLiner;
@@ -39,7 +44,7 @@ if (!series) {
         <h3>${product.name}</h3>
         <p>${product.description}</p>
       </article>`).join('')
-    : `<p>Individual product designs and their photographs are being prepared for this series. Join the founding list to be among the first to see them.</p>`;
+    : `<p>Individual product listings are being prepared for this series. Join the founding list to be among the first to see them.</p>`;
 
   renderGallery(series);
   addCollectionSchema(series, canonical, description);
@@ -58,39 +63,31 @@ function renderGallery(collection) {
     return;
   }
 
-  let active = 0;
-  const images = collection.images;
   gallery.innerHTML = `
-    <div class="series-gallery__stage">
-      <img class="series-gallery__image" alt="" />
-      ${images.length > 1 ? `
-        <button class="series-gallery__arrow series-gallery__arrow--prev" type="button" aria-label="Previous image">‹</button>
-        <button class="series-gallery__arrow series-gallery__arrow--next" type="button" aria-label="Next image">›</button>
-      ` : ''}
-    </div>
-    ${images.length > 1 ? '<div class="series-gallery__dots" aria-label="Choose collection image"></div>' : ''}`;
+    <div class="series-gallery__grid">
+      ${collection.images.map((image, index) => `
+        <button class="series-gallery__item" type="button" data-full="${image.lg}"
+                data-alt="${image.alt}" aria-label="View ${collection.name} photo ${index + 1}">
+          <img src="${image.sm}"
+               alt="${image.alt}" loading="${index < 3 ? 'eager' : 'lazy'}" decoding="async" />
+        </button>`).join('')}
+    </div>`;
 
-  const image = gallery.querySelector('.series-gallery__image');
-  const dots = gallery.querySelector('.series-gallery__dots');
-
-  function show(index) {
-    active = (index + images.length) % images.length;
-    image.src = images[active].src;
-    image.alt = images[active].alt || `${collection.name} backdrop design`;
-    if (dots) {
-      dots.innerHTML = images.map((_, i) => `
-        <button type="button" aria-label="Show image ${i + 1}"
-          aria-current="${i === active ? 'true' : 'false'}" data-index="${i}"></button>`).join('');
-    }
-  }
-
-  gallery.querySelector('.series-gallery__arrow--prev')?.addEventListener('click', () => show(active - 1));
-  gallery.querySelector('.series-gallery__arrow--next')?.addEventListener('click', () => show(active + 1));
-  dots?.addEventListener('click', event => {
-    const button = event.target.closest('button[data-index]');
-    if (button) show(Number(button.dataset.index));
+  const dialog = document.getElementById('seriesImageDialog');
+  const dialogImage = document.getElementById('seriesImageDialogPhoto');
+  gallery.addEventListener('click', event => {
+    const item = event.target.closest('.series-gallery__item');
+    if (!item) return;
+    dialogImage.src = item.dataset.full;
+    dialogImage.alt = item.dataset.alt;
+    dialog.showModal();
   });
-  show(0);
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && dialog.open) dialog.close();
+  });
 }
 
 function addCollectionSchema(collection, canonical, description) {
@@ -106,6 +103,7 @@ function addCollectionSchema(collection, canonical, description) {
     isPartOf: 'https://www.toranastudio.com/',
     keywords: collection.tags.join(', '),
     about: collection.shortDescription,
+    image: collection.images.map(image => new URL(image.lg, window.location.href).href),
   });
   document.head.appendChild(schema);
 }
