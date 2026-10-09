@@ -33,16 +33,109 @@ Two models are offered:
 - **Rent** — for one-off events. Statement backdrops and props are delivered before the
   date, returned afterwards with a prepaid label, and professionally cleaned between homes.
 
-## Founding collection (preview)
+## Collection series
 
-Pricing is not published yet. Named kits previewed on the site:
+The homepage presents seven collection series. Open a series to read its short and full
+description. Individual product designs and collection photographs are being prepared;
+do not assign the currently available preview photos to a series.
 
-- Kalyanam Grand Arch — wedding and reception. Buy or rent.
-- Marigold Courtyard — mehendi and haldi. Buy or rent.
-- Temple Threshold — pooja and festival. Buy.
-- Seemantham Soft Bloom — baby shower and naming ceremony. Buy or rent.
-- First Year Festoon — birthday and milestone. Buy.
-- New Home Toran — griha pravesh. Rent.
+### Kattam Series
+
+- Page: https://www.toranastudio.com/collection.html?series=kattam
+- Tagline: Timeless Geometry, Woven in Tradition.
+- One-liner: Vibrant checks and structured grids woven with classic South Indian heritage.
+- Short description: Celebrating the classic grid of traditional South Indian textiles,
+  the Kattam Series brings structured elegance, sacred borders, and rhythmic charm to
+  festive event backdrops.
+- Full description: Inspired by the iconic check patterns (Kattam) of South Indian
+  weaves, this collection brings grid-based simplicity and cultural authenticity to
+  event backdrops. Highlighted by traditional border motifs, yali artwork, and rich
+  color blocks—from pastel checks to rich olive and turmeric tones—the Kattam Series
+  creates a structured yet warm setting for ceremonial stages and intimate celebrations.
+
+### Ithihasa Series
+
+- Page: https://www.toranastudio.com/collection.html?series=ithihasa
+- Tagline: Sacred Stories Carved in Time.
+- One-liner: Divine art panels, sacred deities, and grand mythological narratives for
+  royal celebrations.
+- Short description: Inspired by sacred iconography, mythological scenes, and classical
+  temple art, the Ithihasa Series translates epic narratives into grand backdrop
+  compositions.
+- Full description: Step into a world of timeless devotion with the Ithihasa Series.
+  Featuring traditional portraits of deities, sacred lotus pediments, archways
+  (prabhavali), and epic storytelling illustrations against rich crimson, ivory, and
+  sage backdrops, this collection creates a regal ambiance. It brings the reverence,
+  drama, and artistic legacy of ancient Indian temples directly to grand celebrations.
+
+### Kalamkari Series
+
+- Page: https://www.toranastudio.com/collection.html?series=kalamkari
+- Tagline: Hand-Painted Splendor, Expressed in Detail.
+- One-liner: Artistic pen-style illustration with sacred shlokas, lotus borders, and
+  fluid floral motifs.
+- Short description: Highlighting classical pen art techniques, the Kalamkari Series
+  features hand-painted floral panels, sacred Sanskrit chants, and rich botanical borders.
+- Full description: Rooted in traditional textile art, the Kalamkari Series combines
+  fluid linework with spiritual warmth. Featuring central panels adorned with Sanskrit
+  shlokas like the Ganesha Stotram, framed by blooming lotus borders, peacocks, and
+  intricate vine scrollwork, these backdrops blend artisanal detail with a deeply
+  auspicious, elevated aesthetic.
+
+### Kalpana Series
+
+- Page: https://www.toranastudio.com/collection.html?series=kalpana
+- Tagline: Where Tradition Meets Creative Imagination.
+- One-liner: Artistic reinterpretations of classic motifs through bold lotus art,
+  swirling paisleys, and soft pastel palettes.
+- Short description: A creative exploration of traditional Indian motifs, the Kalpana
+  Series bridges heritage art with sophisticated contemporary backdrops.
+- Full description: Kalpana—meaning imagination—offers a fresh visual take on classical
+  motifs. From oversized line-art lotus ponds and dramatic swirling paisley wall textures
+  to subtle block-printed repeat patterns on blush and terracotta tones, this collection
+  brings creative depth and artistic flair to wedding mandaps and reception stages.
+
+### Kolam Series
+
+- Page: https://www.toranastudio.com/collection.html?series=kolam
+- Tagline: The Sacred Rhythm of Lines and Symmetry.
+- One-liner: Sacred geometric line art and doorstep symmetry rendered in pristine floor
+  and wall motifs.
+- Short description: Honoring the daily ritual of threshold art, the Kolam Series
+  captures the serene beauty and mathematical symmetry of traditional South Indian line art.
+- Full description: Inspired by dawn ritual drawings, the Kolam Series celebrates sacred
+  symmetry and auspicious welcome. Featuring crisp white and ochre geometric line
+  drawings centered against warm turmeric, terracotta, and deep maroon backdrops, these
+  designs are framed by carved temple pillars and marigold garlands to set a tranquil,
+  blessed atmosphere for any ceremony.
+
+### Rajasthani Series
+
+- Page: https://www.toranastudio.com/collection.html?series=rajasthani
+- Tagline: Regal Splendor, Vibrant Heritage.
+- One-liner: Regal jharokhas, royal block-print trees, mehndi artwork, and majestic
+  desert motifs.
+- Short description: Inspired by palace architecture and folk craft, the Rajasthani
+  Series brings royal archways, painted horses, and block-printed trees to life.
+- Full description: Step into royal courtyards with the Rajasthani Series. Featuring
+  elegant jharokha archways, royal Kalpavriksha tree-of-life wall murals, folk-painted
+  horses, and traditional Mehndi ceremony illustrations, this collection radiates the
+  celebratory spirit and opulent charm of Rajasthan's heritage in shades of mint, rose,
+  and warm ochre.
+
+### Sampradaya Series
+
+- Page: https://www.toranastudio.com/collection.html?series=sampradaya
+- Tagline: The Essence of Eternal Customs.
+- One-liner: Pure customary motifs, temple archways, auspicious symbols, and classic
+  festive layouts.
+- Short description: Deeply rooted in ritual and tradition, the Sampradaya Series
+  features iconic temple borders, auspicious symbols, and classic floral arrangements.
+- Full description: Sampradaya embodies the unbroken continuity of Indian traditions
+  and customs. Combining floor-to-ceiling white-ink arch motifs (rangoli archways),
+  repeated elephant and peacock motifs, sacred Om symbols, and lush banana canopy
+  frameworks, this versatile series delivers an authentic, quintessential backdrop for
+  traditional ceremonies.
 
 ## How setup works
 

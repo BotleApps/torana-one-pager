@@ -1,6 +1,6 @@
 /* ============================================================
    Torana Studio — pre-launch one pager
-   Edit LAUNCH_DATE, PRODUCTS and GALLERY below to update content.
+  Edit LAUNCH_DATE and FORM_ENDPOINT below to update site settings.
    ============================================================ */
 
 /* Launch date used by the countdown. Change this to your real date. */
@@ -12,194 +12,71 @@ const FORM_ENDPOINT = '';
 const STUDIO_EMAIL = 'hello@toranastudio.com';
 
 const IMG = 'assets/img/';
-const sm = n => `${IMG}${n}-sm.webp`;
 const lg = n => `${IMG}${n}-lg.webp`;
-
-const PRODUCTS = [
-  {
-    n: 5,
-    cat: 'Wedding & Reception',
-    name: 'Kalyanam Grand Arch',
-    copy: 'A ceremonial stage backdrop in Kumkum crimson with kolam line art, layered garlands and brass styling.',
-    tags: ['Buy', 'Rent'],
-  },
-  {
-    n: 13,
-    cat: 'Mehendi & Haldi',
-    name: 'Marigold Courtyard',
-    copy: 'Sun-warm ochre and marigold tones for the loudest, happiest night of the wedding week.',
-    tags: ['Buy', 'Rent'],
-  },
-  {
-    n: 17,
-    cat: 'Pooja & Festival',
-    name: 'Temple Threshold',
-    copy: 'A serene devotional setup built around lamps, lotus motifs and a calm, symmetrical centre.',
-    tags: ['Buy'],
-  },
-  {
-    n: 20,
-    cat: 'Baby Shower & Naming',
-    name: 'Seemantham Soft Bloom',
-    copy: 'Gentle pastels, floral strings and cane seating for seemantham, godh bharai and namakaranam.',
-    tags: ['Buy', 'Rent'],
-  },
-  {
-    n: 18,
-    cat: 'Birthday & Milestone',
-    name: 'First Year Festoon',
-    copy: 'A playful, photo-ready corner that still feels rooted — cloth banners instead of foil balloons.',
-    tags: ['Buy'],
-  },
-  {
-    n: 15,
-    cat: 'Griha Pravesh',
-    name: 'New Home Toran',
-    copy: 'The entrance set — doorway toran, floor-side props and a backdrop that welcomes the first guest.',
-    tags: ['Rent'],
-  },
-];
 
 /* Backdrops that rotate inside the hero arch. */
 const HERO_SLIDES = [
   { n: 9, label: 'Mehendi & Haldi' },
   { n: 6, label: 'Wedding Mandap' },
-  { n: 13, label: 'Marigold Courtyard' },
+  { n: 13, label: 'Festival at Home' },
   { n: 20, label: 'Baby Shower' },
 ];
 
-/* Square files are flat backdrop prints, the rest are styled setups. */
-const GALLERY = [
-  { n: 1, type: 'print' },
-  { n: 3, type: 'print' },
-  { n: 11, type: 'print' },
-  { n: 12, type: 'print' },
-  { n: 14, type: 'print' },
-  { n: 16, type: 'print' },
-  { n: 19, type: 'print' },
-  { n: 2, type: 'styled' },
-  { n: 4, type: 'styled' },
-  { n: 5, type: 'styled' },
-  { n: 6, type: 'styled' },
-  { n: 7, type: 'styled' },
-  { n: 8, type: 'styled' },
-  { n: 9, type: 'styled' },
-  { n: 10, type: 'styled' },
-  { n: 13, type: 'styled' },
-  { n: 15, type: 'styled' },
-  { n: 17, type: 'styled' },
-  { n: 18, type: 'styled' },
-  { n: 20, type: 'styled' },
-];
+/* ───────────────── collections ───────────────── */
 
-const LABEL = {
-  print: 'Backdrop print · hand-illustrated on cloth',
-  styled: 'Styled setup · kit + props',
-};
+const seriesGrid = document.getElementById('seriesGrid');
 
-/* ───────────────── products ───────────────── */
-
-const productGrid = document.getElementById('productGrid');
-
-productGrid.innerHTML = PRODUCTS.map((p, i) => `
-  <article class="product reveal" data-delay="${i % 3}">
-    <div class="product__media">
-      <img src="${sm(p.n)}" alt="${p.name} backdrop setup" loading="lazy" decoding="async" />
-      <div class="product__tags">
-        ${p.tags.map(t => `<span class="tag tag--${t.toLowerCase()}">To ${t}</span>`).join('')}
+function renderSeriesCards() {
+  if (!seriesGrid) return;
+  seriesGrid.innerHTML = window.TORANA_COLLECTIONS.map((series, i) => `
+    <article class="series-card reveal" data-delay="${i % 3}" data-series="${series.slug}">
+      <div class="series-card__visual">
+        <a class="series-card__image-link" href="collection.html?series=${series.slug}"
+           aria-label="Explore ${series.name}">
+          ${series.images.length
+            ? `<img class="series-card__photo" src="${series.images[0].src}"
+                 alt="${series.images[0].alt || series.name}" loading="lazy" decoding="async" />`
+            : `<span class="series-card__monogram" aria-hidden="true">${series.name.charAt(0)}</span>`}
+        </a>
+        <span class="series-card__index">Series ${String(i + 1).padStart(2, '0')}</span>
+        <span class="series-card__visual-caption" ${series.images.length ? 'hidden' : ''}>Collection artwork coming soon</span>
+        <span class="series-card__hover-copy">${series.shortDescription}</span>
+        ${series.images.length > 1 ? `
+          <button class="series-card__arrow series-card__arrow--prev" type="button" aria-label="Previous ${series.name} image">‹</button>
+          <button class="series-card__arrow series-card__arrow--next" type="button" aria-label="Next ${series.name} image">›</button>
+          <span class="series-card__counter" aria-live="polite">1 / ${series.images.length}</span>
+        ` : ''}
       </div>
-    </div>
-    <div class="product__body">
-      <p class="product__cat">${p.cat}</p>
-      <h3>${p.name}</h3>
-      <p>${p.copy}</p>
-      <div class="product__foot">
-        <span class="product__price">from <b>$000</b></span>
-        <span class="product__soon">Coming soon</span>
-      </div>
-    </div>
-  </article>
-`).join('');
+      <a class="series-card__body" href="collection.html?series=${series.slug}">
+        <span class="series-card__name">${series.name}</span>
+        <span class="series-card__tagline">${series.tagline}</span>
+        <span class="series-card__one-liner">${series.oneLiner}</span>
+        <span class="series-card__link">Explore series <span aria-hidden="true">↗</span></span>
+      </a>
+    </article>
+  `).join('');
+}
 
-/* ───────────────── gallery ───────────────── */
+renderSeriesCards();
 
-const gallery = document.getElementById('gallery');
+if (seriesGrid) {
+  seriesGrid.addEventListener('click', event => {
+    const button = event.target.closest('.series-card__arrow');
+    if (!button) return;
 
-gallery.innerHTML = GALLERY.map((g, i) => `
-  <button class="tile" type="button" data-type="${g.type}" data-index="${i}"
-          data-full="${lg(g.n)}"
-          aria-label="Open image ${i + 1} of ${GALLERY.length}">
-    <img src="${sm(g.n)}" alt="${LABEL[g.type]}" loading="lazy" decoding="async" />
-    <span class="tile__veil"><span>${LABEL[g.type]}</span></span>
-  </button>
-`).join('');
-
-document.querySelectorAll('.lookbook__filters .chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    const filter = chip.dataset.filter;
-    document.querySelectorAll('.lookbook__filters .chip')
-      .forEach(c => c.classList.toggle('is-active', c === chip));
-    gallery.querySelectorAll('.tile').forEach(tile => {
-      tile.classList.toggle('is-hidden', filter !== 'all' && tile.dataset.type !== filter);
-    });
+    const card = button.closest('.series-card');
+    const collection = window.TORANA_COLLECTIONS.find(item => item.slug === card.dataset.series);
+    const image = card.querySelector('.series-card__photo');
+    const counter = card.querySelector('.series-card__counter');
+    let index = Number(card.dataset.imageIndex || 0);
+    index = (index + (button.classList.contains('series-card__arrow--next') ? 1 : -1)
+      + collection.images.length) % collection.images.length;
+    card.dataset.imageIndex = index;
+    image.src = collection.images[index].src;
+    image.alt = collection.images[index].alt || collection.name;
+    counter.textContent = `${index + 1} / ${collection.images.length}`;
   });
-});
-
-/* ───────────────── lightbox ───────────────── */
-
-const lightbox = document.getElementById('lightbox');
-const lbImage = document.getElementById('lbImage');
-const lbCaption = document.getElementById('lbCaption');
-let lbIndex = 0;
-let lastFocused = null;
-
-function visibleTiles() {
-  return [...gallery.querySelectorAll('.tile:not(.is-hidden)')];
 }
-
-function showImage(index) {
-  const tiles = visibleTiles();
-  if (!tiles.length) return;
-  lbIndex = (index + tiles.length) % tiles.length;
-  const tile = tiles[lbIndex];
-  const img = tile.querySelector('img');
-  lbImage.src = tile.dataset.full || img.src;
-  lbImage.alt = img.alt;
-  lbCaption.textContent = `${img.alt} — ${lbIndex + 1} / ${tiles.length}`;
-}
-
-function openLightbox(tile) {
-  lastFocused = tile;
-  lightbox.hidden = false;
-  requestAnimationFrame(() => lightbox.classList.add('is-open'));
-  document.body.style.overflow = 'hidden';
-  showImage(visibleTiles().indexOf(tile));
-  document.getElementById('lbClose').focus();
-}
-
-function closeLightbox() {
-  lightbox.classList.remove('is-open');
-  document.body.style.overflow = '';
-  setTimeout(() => { lightbox.hidden = true; }, 350);
-  if (lastFocused) lastFocused.focus();
-}
-
-gallery.addEventListener('click', e => {
-  const tile = e.target.closest('.tile');
-  if (tile) openLightbox(tile);
-});
-
-document.getElementById('lbClose').addEventListener('click', closeLightbox);
-document.getElementById('lbPrev').addEventListener('click', () => showImage(lbIndex - 1));
-document.getElementById('lbNext').addEventListener('click', () => showImage(lbIndex + 1));
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-
-document.addEventListener('keydown', e => {
-  if (lightbox.hidden) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') showImage(lbIndex - 1);
-  if (e.key === 'ArrowRight') showImage(lbIndex + 1);
-});
 
 /* ───────────────── reveal on scroll ───────────────── */
 

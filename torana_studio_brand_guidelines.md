@@ -192,6 +192,27 @@ The typography pairs classic editorial luxury with clean modern legibility, echo
 > **Eco-Conscious Textiles:** Premium cloth backdrops and sustainable props replacing single-use plastics.
 > **Effortless Setup:** Lightweight, compact kits designed for smooth assembly in a few minutes and easy returns.
 
+#### Collection Series
+
+The website introduces seven named decor series. Each series tile presents its name,
+tagline, and one-line introduction. Its short description appears on hover and on the
+series page; the long description is available on that page as an expanded story.
+Collection photography and individual product listings are added only after their
+series and product assignments are confirmed.
+
+| Series | Tagline | One-Liner |
+| :--- | :--- | :--- |
+| **Kattam Series** | Timeless Geometry, Woven in Tradition. | Vibrant checks and structured grids woven with classic South Indian heritage. |
+| **Ithihasa Series** | Sacred Stories Carved in Time. | Divine art panels, sacred deities, and grand mythological narratives for royal celebrations. |
+| **Kalamkari Series** | Hand-Painted Splendor, Expressed in Detail. | Artistic pen-style illustration with sacred shlokas, lotus borders, and fluid floral motifs. |
+| **Kalpana Series** | Where Tradition Meets Creative Imagination. | Artistic reinterpretations of classic motifs through bold lotus art, swirling paisleys, and soft pastel palettes. |
+| **Kolam Series** | The Sacred Rhythm of Lines and Symmetry. | Sacred geometric line art and doorstep symmetry rendered in pristine floor and wall motifs. |
+| **Rajasthani Series** | Regal Splendor, Vibrant Heritage. | Regal jharokhas, royal block-print trees, mehndi artwork, and majestic desert motifs. |
+| **Sampradaya Series** | The Essence of Eternal Customs. | Pure customary motifs, temple archways, auspicious symbols, and classic festive layouts. |
+
+Full collection descriptions, short descriptions, tags, and page data are maintained in
+`collections-data.js` so the website can present them consistently.
+
 ---
 
 ### 6.3 Social Media Content Hooks & Captions
