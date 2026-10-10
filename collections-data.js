@@ -85,4 +85,16 @@ window.TORANA_COLLECTIONS = [
     images: collectionImages('sampradaya', 9, 'Sampradaya Series'),
     products: [],
   },
+  {
+    slug: 'swayam',
+    name: 'Swayam Series',
+    oneLiner: 'Bespoke design kits crafted entirely around your unique vision, taste, and story.',
+    tagline: 'Your Vision, Handcrafted to Perfection.',
+    tags: ['ToranaStudio', 'SwayamSeries', 'CustomDesign', 'BespokeKits', 'PersonalizedDecor', 'YourStoryYourDesign'],
+    shortDescription: 'Empowering your imagination, the Swayam Series allows you to bring your own ideas and collaborate with us to create a fully customized, tailor-made decor kit.',
+    longDescription: '"Swayam" represents individuality, self-expression, and personal choice. True to its name, this collection puts the creative reins in your hands. Whether you have a specific mood board, a unique color palette, or a deeply personal motif in mind, our team transforms your ideas into custom-designed backdrop kits tailored precisely to your taste, space, and requirement. Your vision, expertly brought to life.',
+    images: [{ sm: 'assets/img/11-sm.webp', lg: 'assets/img/11-lg.webp', alt: 'Bespoke custom Indian celebration backdrop' }],
+    products: [],
+    custom: true,
+  },
 ];

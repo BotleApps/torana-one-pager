@@ -28,7 +28,26 @@ const seriesGrid = document.getElementById('seriesGrid');
 
 function renderSeriesCards() {
   if (!seriesGrid) return;
-  seriesGrid.innerHTML = window.TORANA_COLLECTIONS.map((series, i) => `
+  seriesGrid.innerHTML = window.TORANA_COLLECTIONS.map((series, i) => {
+    if (series.custom) {
+      return `
+    <article class="series-card series-card--custom reveal" data-delay="${i % 3}" data-series="${series.slug}">
+      <div class="series-card__visual">
+        <a class="series-card__image-link" href="mailto:hello@toranastudio.com?subject=Custom%20Decor%20Kit%20Enquiry"
+           aria-label="Enquire about ${series.name}">
+          <img class="series-card__photo" src="${series.images[0].sm}"
+               alt="${series.images[0].alt}" loading="lazy" decoding="async" />
+        </a>
+      </div>
+      <a class="series-card__body" href="mailto:hello@toranastudio.com?subject=Custom%20Decor%20Kit%20Enquiry">
+        <span class="series-card__name">${series.name}</span>
+        <span class="series-card__tagline">${series.tagline}</span>
+        <span class="series-card__one-liner">${series.oneLiner}</span>
+        <span class="series-card__link">Start a conversation <span aria-hidden="true">↗</span></span>
+      </a>
+    </article>`;
+    }
+    return `
     <article class="series-card reveal" data-delay="${i % 3}" data-series="${series.slug}">
       <div class="series-card__visual">
         <a class="series-card__image-link" href="collection.html?series=${series.slug}"
@@ -53,8 +72,8 @@ function renderSeriesCards() {
         <span class="series-card__one-liner">${series.oneLiner}</span>
         <span class="series-card__link">Explore series <span aria-hidden="true">↗</span></span>
       </a>
-    </article>
-  `).join('');
+    </article>`;
+  }).join('');
 }
 
 renderSeriesCards();

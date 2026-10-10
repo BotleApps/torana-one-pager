@@ -22,7 +22,9 @@ if (!series) {
   document.getElementById('ogTitle').content = `${series.name} | Torana Studio`;
   document.getElementById('ogDescription').content = description;
   document.getElementById('ogUrl').content = canonical;
-  const socialImage = new URL(series.images[0].lg, window.location.href).href;
+  const socialImage = series.images.length
+    ? new URL(series.images[0].lg, window.location.href).href
+    : new URL('assets/logo/torana-lockup.png', window.location.href).href;
   document.getElementById('ogImage').content = socialImage;
   document.getElementById('twitterTitle').content = `${series.name} | Torana Studio`;
   document.getElementById('twitterDescription').content = description;
