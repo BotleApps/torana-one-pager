@@ -646,7 +646,7 @@ body[data-series="kalpana"] { --series-accent: var(--slate); --series-secondary:
   padding: 2.6rem 2.2rem;
   background: rgba(253, 246, 238, 0.05);
 }
-.model--alt { background: rgba(253, 246, 238, 0.11); border-color: var(--turmeric); }
+.model--alt { background: rgba(253, 246, 238, 0.11); }
 .model h3 { font-size: 1.9rem; margin-bottom: 0.8rem; }
 .model p { color: rgba(253, 246, 238, 0.8); font-size: 0.96rem; }
 .model ul { list-style: none; padding: 0; margin: 1.5rem 0 0; }
