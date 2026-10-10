@@ -287,7 +287,7 @@ em { font-style: italic; }
 .hero__copy { grid-column: 1; grid-row: 1; }
 .hero__art  { grid-column: 2; grid-row: 1; }
 
-.hero__logo { margin: 0 0 1.1rem; max-width: 560px; }
+.hero__logo { margin: 0 0 1.1rem; max-width: 448px; }
 .hero__logo img { width: 100%; height: auto; }
 .hero__logo.is-in img { animation: logoIn 1.5s var(--ease) both; }
 @keyframes logoIn {
@@ -868,7 +868,7 @@ body[data-series="kalpana"] { --series-accent: var(--slate); --series-secondary:
   .hero__inner { grid-template-columns: 1fr; }
   .hero__copy { grid-column: 1; grid-row: 2; }
   .hero__art  { grid-column: 1; grid-row: 1; order: -1; max-width: 340px; margin-inline: auto; width: 100%; overflow: hidden; padding-bottom: 1rem; }
-  .hero__logo { max-width: 280px; }
+  .hero__logo { max-width: 224px; }
   .hero__kolam { right: 50%; transform: translate(50%, -50%); opacity: 0.1; width: 115vw; }
   .story__grid { grid-template-columns: 1fr; }
   .story__media { aspect-ratio: 4 / 5; max-height: 560px; }
