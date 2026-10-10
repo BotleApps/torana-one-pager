@@ -219,7 +219,7 @@ Full collection descriptions, short descriptions, tags, and page data are mainta
 
 #### Hook 1 (Focus: Diaspora Nostalgia & Home Connection)
 > *"No matter how far home is, the scent of marigolds and the beauty of a traditional backdrop make every moment feel closer."* 🌸  
-> *Transform your living room into a festive sanctuary with our lightweight cloth backdrop kits. Shipped directly across the US & India. Easy to set up, effortless to store.*
+> *Transform your living room into a festive sanctuary with our lightweight cloth backdrop kits. Shipping launches in India first; US shipping is coming soon. Easy to set up, effortless to store.*
 
 #### Hook 2 (Focus: DIY Joy & Togetherness)
 > *"Tying the first Toran is where the laughter starts."* ✨  
