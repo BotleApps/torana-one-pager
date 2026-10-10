@@ -31,7 +31,7 @@
 <link rel="preload" as="image" href="assets/logo/torana-lockup.webp" />
 <link rel="preload" as="image" href="assets/img/9-lg.webp" />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20261010-modelfix" />
+<link rel="stylesheet" href="styles.css?v=20261010-infodialogs" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -430,6 +430,64 @@
       loading="lazy">Loading…</iframe>
   </dialog>
 
+  <!-- Why Torana dialog -->
+  <dialog class="info-dialog" id="whyDialog" aria-label="Why Torana">
+    <button class="info-dialog__close" aria-label="Close">&#10005;</button>
+    <div class="info-dialog__body">
+      <p class="eyebrow"><span class="eyebrow__dot"></span> Why Torana</p>
+      <h2>Crafted with purpose. Built for your moments.</h2>
+      <div class="info-dialog__cards">
+        <div class="info-dialog__card">
+          <span class="info-dialog__num">01</span>
+          <h3>Authentic Artistry</h3>
+          <p>Drawn from Pichwai, Kalamkari, Muggu and Aipan traditions — lotus arches, temple motifs and auspicious symbolism, rendered with deep cultural respect.</p>
+        </div>
+        <div class="info-dialog__card">
+          <span class="info-dialog__num">02</span>
+          <h3>Eco-Conscious Textiles</h3>
+          <p>Printed on durable, washable, reusable fabric that drapes naturally — replacing glossy vinyl sheets and single-use plastic props that end up in landfill.</p>
+        </div>
+        <div class="info-dialog__card">
+          <span class="info-dialog__num">03</span>
+          <h3>Effortless Setup</h3>
+          <p>Zero tools. Zero technical skill. Flat-packed kits with a clear step-by-step guide, designed for calm assembly in a few minutes and an even faster pack-down.</p>
+        </div>
+        <div class="info-dialog__card">
+          <span class="info-dialog__num">04</span>
+          <h3>Buy or Rent</h3>
+          <p>Keep the pieces you will reuse across years of celebrations. Rent the statement props you need for a single, unforgettable evening — returned with a prepaid label.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Shipping & Delivery dialog -->
+  <dialog class="info-dialog" id="shippingDialog" aria-label="Shipping and Delivery">
+    <button class="info-dialog__close" aria-label="Close">&#10005;</button>
+    <div class="info-dialog__body">
+      <p class="eyebrow"><span class="eyebrow__dot"></span> Shipping &amp; Delivery</p>
+      <h2>Getting your kit to you.</h2>
+      <div class="info-dialog__cards">
+        <div class="info-dialog__card">
+          <span class="info-dialog__num">🇮🇳</span>
+          <h3>India</h3>
+          <p>Delivery within <strong>5–10 business days</strong> from dispatch, depending on your city. Metro cities are typically faster; remote pin codes may take a little longer.</p>
+        </div>
+        <div class="info-dialog__card">
+          <span class="info-dialog__num">🇺🇸</span>
+          <h3>United States</h3>
+          <p>International delivery in <strong>2–4 weeks</strong> from dispatch. Transit time varies by location. US shipping is coming soon — pre-order now to be notified first.</p>
+        </div>
+      </div>
+      <div class="info-dialog__note">
+        <h3>Order processing</h3>
+        <p>Once your order is confirmed, your kit is carefully packed and dispatched within <strong>2–3 business days</strong>. You will receive a tracking link by email as soon as it leaves our studio.</p>
+        <h3>Tracking &amp; support</h3>
+        <p>Use the tracking link to follow your kit in real time. If you have any questions or need help, write to us at <a href="mailto:hello@toranastudio.com">hello@toranastudio.com</a> — we are happy to assist.</p>
+      </div>
+    </div>
+  </dialog>
+
   <!-- ───────────────────────── NOTE / FAQ ───────────────────────── -->
   <section class="section section--cream" id="faq">
     <div class="shell">
@@ -526,8 +584,8 @@
 
     <nav class="footer__col" aria-label="Company">
       <h4>Studio</h4>
-      <a href="why-torana.html">Why Torana</a>
-      <a href="shipping.html">Shipping &amp; Delivery</a>
+      <button class="footer__link-btn" id="whyBtn">Why Torana</button>
+      <button class="footer__link-btn" id="shippingBtn">Shipping &amp; Delivery</button>
       <a href="#models">Buy or Rent</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -548,6 +606,6 @@
 </footer>
 
 <script src="collections-data.js?v=20261009-series-images"></script>
-<script src="script.js?v=20261010-preorder"></script>
+<script src="script.js?v=20261010-infodialogs"></script>
 </body>
 </html>

@@ -230,6 +230,20 @@ if (preorderBtn && preorderDialog) {
   preorderDialog.addEventListener('click', e => { if (e.target === preorderDialog) preorderDialog.close(); });
 }
 
+/* ───────────────── info dialogs (Why Torana / Shipping) ───────────────── */
+
+[
+  ['whyBtn', 'whyDialog'],
+  ['shippingBtn', 'shippingDialog'],
+].forEach(([btnId, dialogId]) => {
+  const btn = document.getElementById(btnId);
+  const dlg = document.getElementById(dialogId);
+  if (!btn || !dlg) return;
+  btn.addEventListener('click', () => dlg.showModal());
+  dlg.querySelector('.info-dialog__close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+});
+
 /* ───────────────── misc ───────────────── */
 
 document.getElementById('year').textContent = new Date().getFullYear();

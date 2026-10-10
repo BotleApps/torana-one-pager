@@ -731,6 +731,57 @@ body[data-series="kalpana"] { --series-accent: var(--slate); --series-secondary:
 }
 .preorder-dialog__close:hover { background: rgba(46,29,23,0.16); }
 
+/* ───────── info dialogs (Why Torana / Shipping) ───────── */
+
+.info-dialog {
+  border: none; padding: 0; border-radius: 4px;
+  width: min(700px, 96vw); max-height: 90vh; overflow: hidden;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5);
+  background: var(--cream);
+}
+.info-dialog::backdrop { background: rgba(46, 29, 23, 0.72); backdrop-filter: blur(3px); }
+.info-dialog__close {
+  position: absolute; top: 0.8rem; right: 0.8rem;
+  width: 2.2rem; height: 2.2rem; border: none; background: rgba(46,29,23,0.08);
+  border-radius: 50%; cursor: pointer; font-size: 0.85rem; color: var(--ink);
+  display: flex; align-items: center; justify-content: center; z-index: 1;
+}
+.info-dialog__close:hover { background: rgba(46,29,23,0.16); }
+.info-dialog__body {
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
+  overflow-y: auto; max-height: 90vh;
+}
+.info-dialog__body h2 { margin: 0.4rem 0 1.8rem; }
+.info-dialog__cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem; margin-bottom: 1.8rem;
+}
+.info-dialog__card {
+  border: 1px solid var(--line); border-radius: 3px;
+  padding: 1.4rem 1.2rem;
+}
+.info-dialog__num {
+  display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--crimson); margin-bottom: 0.5rem;
+}
+.info-dialog__card h3 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+.info-dialog__card p { font-size: 0.88rem; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+.info-dialog__note {
+  border-top: 1px solid var(--line); padding-top: 1.4rem;
+}
+.info-dialog__note h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+.info-dialog__note p { font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 1.2rem; line-height: 1.6; }
+.info-dialog__note a { color: var(--crimson); }
+
+/* footer link-style buttons */
+.footer__link-btn {
+  background: none; border: none; padding: 0; cursor: pointer;
+  font-family: var(--sans); font-size: inherit;
+  color: rgba(253, 246, 238, 0.7); text-align: left;
+  transition: color 0.25s;
+}
+.footer__link-btn:hover { color: var(--cream); }
+
 /* ───────── note + faq ───────── */
 
 .faq--full {
