@@ -1,14 +1,7 @@
 /* ============================================================
    Torana Studio — pre-launch one pager
-  Edit LAUNCH_DATE and FORM_ENDPOINT below to update site settings.
    ============================================================ */
 
-/* Launch date used by the countdown. Change this to your real date. */
-const LAUNCH_DATE = new Date('2026-11-08T09:00:00-08:00'); // Diwali 2026
-
-/* Paste a Formspree (or similar) endpoint to collect signups.
-   While this is empty the form falls back to a pre-filled email. */
-const FORM_ENDPOINT = '';
 const STUDIO_EMAIL = 'hello@toranastudio.com';
 
 const IMG = 'assets/img/';
@@ -225,101 +218,17 @@ navLinks.addEventListener('click', e => {
   }
 });
 
-/* ───────────────── countdown ───────────────── */
+/* ───────────────── pre-order dialog ───────────────── */
 
-const countdown = document.getElementById('countdown');
+const preorderDialog = document.getElementById('preorderDialog');
+const preorderBtn = document.getElementById('preorderBtn');
+const preorderClose = document.getElementById('preorderClose');
 
-function tick() {
-  const diff = LAUNCH_DATE - Date.now();
-  const clamped = Math.max(diff, 0);
-  const sec = Math.floor(clamped / 1000);
-
-  const parts = {
-    days: Math.floor(sec / 86400),
-    hours: Math.floor((sec % 86400) / 3600),
-    minutes: Math.floor((sec % 3600) / 60),
-    seconds: sec % 60,
-  };
-
-  Object.entries(parts).forEach(([key, value]) => {
-    countdown.querySelector(`[data-cd="${key}"]`).textContent =
-      String(value).padStart(2, '0');
-  });
+if (preorderBtn && preorderDialog) {
+  preorderBtn.addEventListener('click', () => preorderDialog.showModal());
+  preorderClose.addEventListener('click', () => preorderDialog.close());
+  preorderDialog.addEventListener('click', e => { if (e.target === preorderDialog) preorderDialog.close(); });
 }
-
-tick();
-setInterval(tick, 1000);
-
-/* ───────────────── waitlist form ───────────────── */
-
-const form = document.getElementById('waitlistForm');
-const formNote = document.getElementById('formNote');
-const submitBtn = form.querySelector('button[type="submit"]');
-
-function setNote(text, state) {
-  formNote.textContent = text;
-  formNote.className = state ? `formnote is-${state}` : 'formnote';
-}
-
-async function postSignup(payload) {
-  const res = await fetch(FORM_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) throw new Error(`Signup failed with status ${res.status}`);
-}
-
-function mailtoFallback(payload) {
-  const body = Object.entries(payload)
-    .map(([k, v]) => `${k[0].toUpperCase() + k.slice(1)}: ${v || '—'}`)
-    .join('\n');
-  window.location.href =
-    `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent('Founding list — ' + payload.name)}` +
-    `&body=${encodeURIComponent(body)}`;
-}
-
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-
-  const fields = form.elements;
-  const payload = {
-    name: fields.name.value.trim(),
-    email: fields.email.value.trim(),
-    region: fields.region.value,
-    occasion: fields.occasion.value.trim(),
-  };
-  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email);
-
-  document.getElementById('wlName').classList.toggle('is-error', !payload.name);
-  document.getElementById('wlEmail').classList.toggle('is-error', !validEmail);
-
-  if (!payload.name || !validEmail) {
-    setNote('Please add your name and a valid email address.', 'err');
-    return;
-  }
-
-  const firstName = payload.name.split(' ')[0];
-
-  if (!FORM_ENDPOINT) {
-    mailtoFallback(payload);
-    setNote(`Thank you, ${firstName}. Send the email that just opened and you are on the list.`, 'ok');
-    return;
-  }
-
-  submitBtn.disabled = true;
-  setNote('Tying your name to the garland…');
-
-  try {
-    await postSignup(payload);
-    setNote(`Thank you, ${firstName}. You are on the founding list — watch your inbox.`, 'ok');
-    form.reset();
-  } catch {
-    setNote(`Something went wrong on our side. Email us at ${STUDIO_EMAIL} and we will add you by hand.`, 'err');
-  } finally {
-    submitBtn.disabled = false;
-  }
-});
 
 /* ───────────────── misc ───────────────── */
 

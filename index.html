@@ -31,7 +31,7 @@
 <link rel="preload" as="image" href="assets/logo/torana-lockup.webp" />
 <link rel="preload" as="image" href="assets/img/9-lg.webp" />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..600&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=20261010-cleanup" />
+<link rel="stylesheet" href="styles.css?v=20261010-preorder" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -172,7 +172,7 @@
       <a href="#collections">Collections</a>
       <a href="#how">How It Works</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn--sm btn--primary" href="#waitlist">Get Early Access</a>
+      <a class="btn btn--sm btn--primary" href="#waitlist">Pre-order</a>
     </nav>
 
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
@@ -221,7 +221,7 @@
         </p>
 
         <div class="hero__actions reveal" data-delay="4">
-          <a class="btn btn--primary" href="#waitlist">Join the Founding List</a>
+          <a class="btn btn--primary" href="#waitlist">Pre-order</a>
           <a class="btn btn--ghost" href="#collections">Explore Collections</a>
         </div>
       </div>
@@ -405,37 +405,30 @@
   <!-- ───────────────────────── WHY TORANA ───────────────────────── -->
   <!-- ───────────────────────── WAITLIST ───────────────────────── -->
   <section class="waitlist section" id="waitlist">
-    <div class="shell waitlist__inner">
-      <div class="waitlist__copy">
-        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__dot"></span> Founding list</p>
-        <h2 class="reveal" data-delay="1">Be at the threshold first</h2>
-        <p class="reveal" data-delay="2">
-          We are hand-finishing the founding collection now. Leave your name and you will
-          be among the first to see it — with early access, founding-member pricing and a
-          free setup guide in your inbox before launch day.
-        </p>
-
-        <p class="countdown__label reveal" data-delay="3">Doors open Diwali 2026</p>
-        <div class="countdown reveal" data-delay="3" id="countdown" aria-label="Time until launch">
-          <div><strong data-cd="days">--</strong><span>days</span></div>
-          <div><strong data-cd="hours">--</strong><span>hours</span></div>
-          <div><strong data-cd="minutes">--</strong><span>mins</span></div>
-          <div><strong data-cd="seconds">--</strong><span>secs</span></div>
-        </div>
-      </div>
-
-      <div class="waitlist__form reveal" data-delay="2">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdzfx0k8hFGqOE7U7iX3uAHd4zS5yiIYxJxiwqDrR6FOBD5bg/viewform?embedded=true"
-          class="waitlist__gform"
-          title="Join the Founding List"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy">Loading…</iframe>
-      </div>
+    <div class="shell">
+      <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__dot"></span> Pre-order</p>
+      <h2 class="reveal" data-delay="1">Be at the threshold first</h2>
+      <p class="waitlist__lede reveal" data-delay="2">
+        We are hand-finishing the founding collection now. Pre-order today and you will
+        be among the first to receive it — with founding-member pricing and a
+        free setup guide in your inbox before launch day.
+      </p>
+      <button class="btn btn--cream reveal" data-delay="3" id="preorderBtn">Pre-order</button>
     </div>
   </section>
+
+  <!-- Pre-order dialog -->
+  <dialog class="preorder-dialog" id="preorderDialog" aria-label="Pre-order form">
+    <button class="preorder-dialog__close" id="preorderClose" aria-label="Close">&#10005;</button>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdzfx0k8hFGqOE7U7iX3uAHd4zS5yiIYxJxiwqDrR6FOBD5bg/viewform?embedded=true"
+      class="waitlist__gform"
+      title="Pre-order"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      loading="lazy">Loading…</iframe>
+  </dialog>
 
   <!-- ───────────────────────── NOTE / FAQ ───────────────────────── -->
   <section class="section section--cream" id="faq">
@@ -542,7 +535,7 @@
       <a href="shipping.html">Shipping &amp; Delivery</a>
       <a href="#models">Buy or Rent</a>
       <a href="#faq">FAQ</a>
-      <a href="#waitlist">Founding List</a>
+      <a href="#waitlist">Pre-order</a>
     </nav>
 
     <div class="footer__col">
